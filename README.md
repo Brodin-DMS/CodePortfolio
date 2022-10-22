@@ -7,11 +7,13 @@ https://user-images.githubusercontent.com/16268642/197336140-c8be8501-1278-4739-
 
 This is a preview of a Trait ToolTip.
 You can find the code in the SkillTree directory.
-![Monstrosity - Copy (2)](https://user-images.githubusercontent.com/16268642/197336254-7ecd2008-6d7a-4545-a88d-0543aab65782.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/16268642/197336254-7ecd2008-6d7a-4545-a88d-0543aab65782.png" alt="Sublime's custom image"/>
+</p>
 
-this is a preview of Buff Code.
 You can find the code in the Buff directory.
-
 you can find more of my work on:
+
 LinkedIn: https://linkedin.com/in/dierk-martin-strauss
+
 YouTube: https://www.youtube.com/channel/UCMsGbL4Y4c8R8on-nft_ZiQ
