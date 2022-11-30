@@ -3,81 +3,87 @@ using System.Collections.Generic;
 using UnityEngine;
 using RitualOfAnkaraz.Stats;
 
-/// <summary>
-/// Class <c>BullStrengthBuff</c> controls the BullStrength status. It is applied by the Skill BullsStrength(arcane or divine magic).
-/// </summary>
-public class BullStrengthBuff : BaseBuffDebuff
+namespace RitualOfAnkaraz.Buffs
 {
-    public int buffAmount;
-    public BullStrengthBuff(CharacterStatsBase characterStats, int durationCharges, string iconPath, string buffName, string desc, BaseBuffType type) : base(characterStats, durationCharges, iconPath, buffName, desc, type)
-    {
 
-    }
     /// <summary>
-    /// This Method applies 1d5 +1 strength to the targeted Character, initializes the duration counter thread, and Instantiates the UI element.
+    /// Class <c>BullStrengthBuff</c> controls the BullStrength status. It is applied by the Skill BullsStrength(arcane or divine magic).
     /// </summary>
-    public override void OnBuffApply()
+    public class BullStrengthBuff : BaseBuffDebuff
     {
-        base.OnBuffApply();
-        //check if buff is applied
-        if (characterStatsBase.buffAndDebuffList.TrueForAll(item => item.buffName != buffName))
+        public int buffAmount;
+        public BullStrengthBuff(CharacterStatsBase casterStats, CharacterStatsBase targetStats)
         {
-            //add to charStatusList
-            characterStatsBase.buffAndDebuffList.Add(this);
-            //add to player, temporary
-            onPlayerBuff = GameObject.Instantiate(SkillDatabase.instance.applyBuffPrefab, characterStatsBase.transform);
-            //add to UI
-            uiBuff = GameObject.Instantiate(SkillDatabase.instance.UibuffPrefab, characterStatsBase.UiBuffHolder);
-            uiBuff.GetComponent<BuffUi>().Setup(this, durationCharges.ToString(), iconPath);
-            //add playerStats
-            buffAmount = Random.Range(1, 5) + 1;
-            characterStatsBase.strengthModifikation += buffAmount;
+            durationCharges = 5;
+            if (casterStats.hasLearnedPassiveSkill(SkillDatabase.instance.buffArtist)) { durationCharges += 2; }
+            iconPath = "SkillSprites / Skill icons Warrior/ Icons / Filled / SIW 11";
+            buffName = "Bull's Strength";
+            desc = "Provides the Target with an additional 1d4+1 Strength";
+            baseBuffType = BaseBuffType.Buff;
+            characterStatsBase = targetStats;
+            maxDurationCharges = durationCharges;
 
+            OnBuffApply();
         }
-        else
+        /// <summary>
+        /// This Method applies 1d5 +1 strength to the targeted Character, initializes the duration counter thread, and Instantiates the UI element.
+        /// </summary>
+        public override void OnBuffApply()
         {
-            BaseBuffDebuff bs = characterStatsBase.buffAndDebuffList.Find(item => item.buffName == buffName);
-            bs.durationCharges = maxDurationCharges;
-            bs.uiBuff.GetComponent<BuffUi>().UpdateDuration(durationCharges);
-
-        }
-    }
-    /// <summary>
-    /// This Method only decreases duration charges.
-    /// </summary>
-    public override void OnBuffTick()
-    {
-        base.OnBuffTick();
-        if (durationCharges > 1)
-        {
-            if (CustomGameManager.gameStage == GameStage.Combat)
+            base.OnBuffApply();
+            //check if buff is applied
+            if (characterStatsBase.buffAndDebuffList.TrueForAll(item => item.buffName != buffName))
             {
-                durationCharges -= 1;
+                //add to charStatusList
+                characterStatsBase.buffAndDebuffList.Add(this);
+                Object.Instantiate(SkillDatabase.instance.applyBuffPrefab, characterStatsBase.transform);
+                //add to UI
+                uiBuff = Object.Instantiate(SkillDatabase.instance.UibuffPrefab, characterStatsBase.UiBuffHolder);
+                uiBuff.GetComponent<BuffUi>().Setup(this, durationCharges.ToString(), iconPath);
+                //add playerStats
+                buffAmount = Random.Range(1, 5) + 1;
+                characterStatsBase.strengthModifikation += buffAmount;
+
             }
             else
             {
-                durationCharges -= 1;
+                BullStrengthBuff bs = (BullStrengthBuff)characterStatsBase.buffAndDebuffList.Find(item => item.buffName == buffName);
+                bs.durationCharges = maxDurationCharges;
+                bs.uiBuff.GetComponent<BuffUi>().UpdateDuration(durationCharges);
+                //take value of higher rolled buff.
+                if (buffAmount > bs.buffAmount)
+                {
+                    bs.buffAmount = buffAmount;
+                    characterStatsBase.strengthModifikation += buffAmount - bs.buffAmount;
+                }
+
             }
-            uiBuff.GetComponent<BuffUi>().UpdateDuration(durationCharges);
         }
-        else
+        /// <summary>
+        /// This Method only decreases duration charges.
+        /// </summary>
+        public override void OnBuffTick()
         {
-            if (CustomGameManager.gameStage == GameStage.Combat)
+            base.OnBuffTick();
+            if (durationCharges > 1)
             {
-
+                durationCharges--;
+                uiBuff.GetComponent<BuffUi>().UpdateDuration(durationCharges);
             }
-            OnBuffDrop();
+            else
+            {
+                OnBuffDrop();
+            }
 
         }
+        /// <summary>
+        /// This Method removes the strength buff from the statSheet, stops the coroutine, and Destroys the UI Buff Element.
+        /// </summary>
+        public override void OnBuffDrop()
+        {
+            characterStatsBase.strengthModifikation -= buffAmount;
+            base.OnBuffDrop();
 
-    }
-    /// <summary>
-    /// This Method removes the strength buff from the statSheet, stops the coroutine, and Destroys the UI Buff Element.
-    /// </summary>
-    public override void OnBuffDrop()
-    {
-        characterStatsBase.strengthModifikation -= buffAmount;
-        base.OnBuffDrop();
-
+        }
     }
 }

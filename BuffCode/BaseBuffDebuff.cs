@@ -2,106 +2,116 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RitualOfAnkaraz.Stats;
+using System;
 
-
-/// <summary>
-/// Class <c>BaseBuffDebuff</c> is the base class controlling all applied buffs, debuffs and status effects applied to any Character. 
-/// </summary>
-public abstract class BaseBuffDebuff
+namespace RitualOfAnkaraz.Buffs
 {
-    public int durationCharges;
-    public int maxDurationCharges;
-    protected string iconPath;
-
-    public string buffName;
-    public string desc;
-    public BaseBuffType baseBuffType;
-    protected Coroutine outOffCombatRoutine;
-    protected CharacterStatsBase characterStatsBase;
-    public GameObject uiBuff;
-    public GameObject onPlayerBuff;
-
-    public BaseBuffDebuff(CharacterStatsBase charStats, int durationCharges, string iconPath, string buffName, string desc, BaseBuffType baseBuffType)
-    {
-        this.durationCharges = durationCharges;
-        this.iconPath = iconPath;
-        this.buffName = buffName;
-        this.desc = desc;
-        this.baseBuffType = baseBuffType;
-        this.characterStatsBase = charStats;
-        this.maxDurationCharges = durationCharges;
-
-        OnBuffApply();
-    }
     /// <summary>
-    /// This Base Method initializes a thread that reduces the buff duration. It is overwritten by subclasses to instantiate Ui elements and apply changes to the charachterStatSheets.
+    /// Class <c>BaseBuffDebuff</c> is the base class controlling all applied buffs, debuffs and status effects applied to any Character. 
     /// </summary>
-    public virtual void OnBuffApply()
+    public abstract class BaseBuffDebuff
     {
-        if (characterStatsBase.buffAndDebuffList.TrueForAll(item => item.buffName != buffName))
+        public int durationCharges;
+        public int maxDurationCharges;
+        protected string iconPath;
+
+        public string buffName;
+        public string desc;
+        public BaseBuffType baseBuffType;
+        protected Coroutine outOffCombatRoutine;
+        protected CharacterStatsBase characterStatsBase;
+        public GameObject uiBuff;
+        public GameObject onPlayerBuff;
+
+        [ObsoleteAttribute("This method is obsolete. Don't inherit this constructor in subclass anymore.", false)]
+        public BaseBuffDebuff(CharacterStatsBase charStats, int durationCharges, string iconPath, string buffName, string desc, BaseBuffType baseBuffType)
         {
-            outOffCombatRoutine = CoroutineManager.instance.StartCoroutine(reduceBuffDurationOutOfCombat());
+            //Construct manually
+            this.durationCharges = durationCharges;
+            this.iconPath = iconPath;
+            this.buffName = buffName;
+            this.desc = desc;
+            this.baseBuffType = baseBuffType;
+            this.characterStatsBase = charStats;
+            this.maxDurationCharges = durationCharges;
+
+            OnBuffApply();
         }
-    }
-    /// <summary>
-    /// This Base method is called when a buff, debuff or status effect is removed by any means. It stops the coroutine, removes applied stats and destroys the Ui element.
-    /// </summary>
-    public virtual void OnBuffDrop()
-    {
-        if (outOffCombatRoutine != null)
+        public BaseBuffDebuff()
         {
-            CoroutineManager.instance.StopCoroutine(outOffCombatRoutine);
+            //do construction driven by subclass;
         }
 
-        GameObject.Destroy(uiBuff);
-        if (onPlayerBuff != null)
+        /// <summary>
+        /// This Base Method initializes a thread that reduces the buff duration. It is overwritten by subclasses to instantiate UI elements and apply changes to the charachterStatSheets.
+        /// </summary>
+        public virtual void OnBuffApply()
         {
-            GameObject.Destroy(onPlayerBuff);
-        }
-        characterStatsBase.buffAndDebuffList.Remove(this);
-    }
-    /// <summary>
-    /// This Base Method is called each time a buff duration charge is removed. It is overwritten by subclasses, applieng changes to the charachterStatSheet.
-    /// </summary>
-    public virtual void OnBuffTick()
-    {
-
-    }
-
-    IEnumerator reduceBuffDurationOutOfCombat()
-    {
-        while (durationCharges > 0)
-        {
-            yield return new WaitForSeconds(30f);
-            if (CustomGameManager.gameStage == GameStage.Normal)
+            if (characterStatsBase.buffAndDebuffList.TrueForAll(item => item.buffName != buffName))
             {
-                if (durationCharges > 1)
+                outOffCombatRoutine = CoroutineManager.instance.StartCoroutine(ReduceBuffDurationOutOfCombat());
+            }
+        }
+        /// <summary>
+        /// This Base method is called when a buff, debuff or status effect is removed by any means. It stops the coroutine, removes applied stats and destroys the UI element.
+        /// </summary>
+        public virtual void OnBuffDrop()
+        {
+            if (outOffCombatRoutine != null)
+            {
+                CoroutineManager.instance.StopCoroutine(outOffCombatRoutine);
+            }
+
+            GameObject.Destroy(uiBuff);
+            if (onPlayerBuff != null)
+            {
+                GameObject.Destroy(onPlayerBuff);
+            }
+            characterStatsBase.buffAndDebuffList.Remove(this);
+        }
+        /// <summary>
+        /// This Base Method is called each time a buff duration charge is removed. It is overwritten by subclasses, applying changes to the charachterStatSheet.
+        /// </summary>
+        public virtual void OnBuffTick()
+        {
+
+        }
+
+        IEnumerator ReduceBuffDurationOutOfCombat()
+        {
+            while (durationCharges > 0)
+            {
+                yield return new WaitForSeconds(30f);
+                if (CustomGameManager.gameStage == GameStage.Normal)
                 {
-                    OnBuffTick();
-                }
-                else
-                {
-                    OnBuffTick();
-                    OnBuffDrop();
-                    yield break;
+                    if (durationCharges > 1)
+                    {
+                        OnBuffTick();
+                    }
+                    else
+                    {
+                        OnBuffTick();
+                        OnBuffDrop();
+                        yield break;
+                    }
                 }
             }
         }
+        /// <summary>
+        /// This Method is called if a buff or debuff drops early by any means.
+        /// </summary>
+        public virtual void RemoveBuff()
+        {
+            //buff is removed with spell
+            OnBuffDrop();
+            CoroutineManager.instance.StopCoroutine(outOffCombatRoutine);
+        }
+
     }
-    /// <summary>
-    /// This Method is called if a buff or debuff drops early by any means.
-    /// </summary>
-    public void RemoveBuff()
+
+    public enum BaseBuffType
     {
-        //buff is removed with spell
-        OnBuffDrop();
-        CoroutineManager.instance.StopCoroutine(outOffCombatRoutine);
+        Buff,
+        Debuff
     }
-
-}
-
-public enum BaseBuffType
-{
-    Buff,
-    Debuff
 }

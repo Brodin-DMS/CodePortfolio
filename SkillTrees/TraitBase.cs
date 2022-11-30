@@ -4,28 +4,23 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using RitualOfAnkaraz.Stats;
+using RitualOfAnkaraz.Requirements;
 
 /// <summary>
 /// Base class to all traits and ascension UI Elements
 /// </summary>
-public class TraitBase : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class TraitBase : MonoBehaviour, IPointerClickHandler
 {
-    public GameObject generalToolTip;
-
     public string traitName;
     public string traitDesc;
-    public TraitType traitType;
+    [SerializeField] protected TraitType traitType;
+    [SerializeField] protected Sprite icon;
 
-    public Sprite icon;
-
-    //TODO check if its calss varaible form supercalss
     public int investedPoints;
     public int maxPoints;
 
     public Image fillColorImage;
-
-    public List<BaseRequirement> requirements;
-
+    protected List<BaseRequirement> requirements;
     public string[] descriptions;
     protected virtual void Awake()
     {
@@ -35,17 +30,11 @@ public class TraitBase : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     {
         fillColorImage.fillAmount = 0;
     }
+    /// <summary>
+    /// This method is overriden by specific traits to control weather a trait is obtainable. The active character then learns the trait and needed trait points are reduced.
+    /// </summary>
+    /// <param name="eventData"></param>
     public virtual void OnPointerClick(PointerEventData eventData)
-    {
-
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
     {
 
     }
@@ -75,6 +64,14 @@ public class TraitBase : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         }
         Debug.Log("all reqs =" + allReqs);
         return allReqs; 
+    }
+    /// <summary>
+    /// this Method is overriden by subclasses and defines the specific behavior when a character learns a specific trait.
+    /// </summary>
+    /// <param name="stats"></param> statSheet of the character obtaining the trait.
+    protected virtual void OnTraitObtain(CharacterStatsBase stats)
+    {
+        
     }
 }
 public enum TraitType
