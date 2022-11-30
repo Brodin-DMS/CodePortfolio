@@ -7,7 +7,7 @@ This is a small showcase and a selected collection of scripts of the game Tavern
 This is a preview of the user interface which is currently displaying the physical trait tree.
 You can find the code in the SkillTree directory.
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/16268642/197336254-7ecd2008-6d7a-4545-a88d-0543aab65782.png" alt="User interface demo"/>
+  <img src="https://user-images.githubusercontent.com/16268642/204818806-9b4fb07f-2158-4171-b5f4-9417acd91716.png" alt="User interface demo"/>
 </p>
 
 This is a showcase of the UI functionality when assembling your party in the creation menu.
