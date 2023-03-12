@@ -19,6 +19,11 @@ Crafting Showcase.
   <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/Crafting.png" alt="Items Demo"/>
 </p>
 
+Non Combat Encounter Showcase.
+<p align="center">
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/Eventimage.png" alt="Items Demo"/>
+</p>
+
 Heores Village.
 <p align="center">
   <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/Village.png" alt="Items Demo"/>
