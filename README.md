@@ -11,17 +11,17 @@ This is a preview of the user interface which is currently displaying the physic
 
 Item showcase.
 <p align="center">
-  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Items.png" alt="Items Demo"/>
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/Items.png" alt="Items Demo"/>
 </p>
 
 Crafting Showcase.
 <p align="center">
-  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Crafting.png" alt="Items Demo"/>
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/Crafting.png" alt="Items Demo"/>
 </p>
 
 Heores Village.
 <p align="center">
-  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Village.png" alt="Items Demo"/>
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/Village.png" alt="Items Demo"/>
 </p>
 
 
