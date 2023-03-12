@@ -5,15 +5,30 @@ This is a small showcase and a selected collection of scripts of the game Tavern
 </p>
 
 This is a preview of the user interface which is currently displaying the physical trait tree.
-You can find the code in the SkillTree directory.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/16268642/204818806-9b4fb07f-2158-4171-b5f4-9417acd91716.png" alt="User interface demo"/>
 </p>
 
+Item showcase.
+<p align="center">
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Items.png" alt="Items Demo"/>
+</p>
+
+Crafting Showcase.
+<p align="center">
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Crafting.png" alt="Items Demo"/>
+</p>
+
+Heores Village.
+<p align="center">
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Village.png" alt="Items Demo"/>
+</p>
+
+
 This is a showcase of the UI functionality when assembling your party in the creation menu.
-You can find the code in the UI directory.
 https://user-images.githubusercontent.com/16268642/197336140-c8be8501-1278-4739-8704-836f6d2c2aee.mp4
 
-
-you can find more of my work on:
+I'm currently working on a nature-themed domain and developing an algorithm that automatically generates playable content. The algorithm's focus on randomly generating unique dungeons with each playthrough ensures a high replay potential for gamers seeking endless exploration and adventure.
+You can find more of my work on:
 YouTube: https://www.youtube.com/channel/UCMsGbL4Y4c8R8on-nft_ZiQ
+![Crafting](https://user-images.githubusercontent.com/16268642/224550947-c8177fa4-d6bc-45c1-b91b-d4cc270071fa.png)
