@@ -31,4 +31,3 @@ https://user-images.githubusercontent.com/16268642/197336140-c8be8501-1278-4739-
 I'm currently working on a nature-themed domain and developing an algorithm that automatically generates playable content. The algorithm's focus on randomly generating unique dungeons with each playthrough ensures a high replay potential for gamers seeking endless exploration and adventure.
 You can find more of my work on:
 YouTube: https://www.youtube.com/channel/UCMsGbL4Y4c8R8on-nft_ZiQ
-![Crafting](https://user-images.githubusercontent.com/16268642/224550947-c8177fa4-d6bc-45c1-b91b-d4cc270071fa.png)
