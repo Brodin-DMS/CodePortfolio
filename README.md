@@ -33,6 +33,6 @@ Heores Village.
 This is a showcase of the UI functionality when assembling your party in the creation menu.
 https://user-images.githubusercontent.com/16268642/197336140-c8be8501-1278-4739-8704-836f6d2c2aee.mp4
 
-I'm currently working on a nature-themed domain and developing an algorithm that automatically generates playable content. The algorithm's focus on randomly generating unique dungeons with each playthrough ensures a high replay potential for gamers seeking endless exploration and adventure.
+I am currently working on the nature-themed domain and developing an algorithm that can automatically generate playable content. The algorithm's main focus is on creating randomly generated unique dungeons, which ensures a high replay potential for gamers who are looking for endless exploration and adventure during each playthrough.
 You can find more of my work on:
 YouTube: https://www.youtube.com/channel/UCMsGbL4Y4c8R8on-nft_ZiQ
