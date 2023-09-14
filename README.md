@@ -36,3 +36,15 @@ https://user-images.githubusercontent.com/16268642/197336140-c8be8501-1278-4739-
 I am currently working on the nature-themed domain and developing an algorithm that can automatically generate playable content. The algorithm's main focus is on creating randomly generated unique dungeons, which ensures a high replay potential for gamers who are looking for endless exploration and adventure during each playthrough.
 You can find more of my work on:
 YouTube: https://www.youtube.com/channel/UCMsGbL4Y4c8R8on-nft_ZiQ
+
+WORK IN PROGRESS!!! (Level Generation Preview)
+
+Smooth Tile Transitions.
+<p align="center">
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/AutomatedLvlGeneration.png" alt="flawlessTilemapTransitions]"/>
+</p>
+
+A 80x80 Tile containing a temple.
+<p align="center">
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/80x80TileLevelGeneration.png" alt="Generated Temple Demo]"/>
+</p>
