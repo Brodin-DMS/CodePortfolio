@@ -19,6 +19,11 @@ Crafting Showcase.
   <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/Crafting.png" alt="Items Demo"/>
 </p>
 
+Non Combat Encounter Showcase.
+<p align="center">
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/Eventimage.png" alt="Items Demo"/>
+</p>
+
 Heores Village.
 <p align="center">
   <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/Village.png" alt="Items Demo"/>
@@ -28,6 +33,18 @@ Heores Village.
 This is a showcase of the UI functionality when assembling your party in the creation menu.
 https://user-images.githubusercontent.com/16268642/197336140-c8be8501-1278-4739-8704-836f6d2c2aee.mp4
 
-I'm currently working on a nature-themed domain and developing an algorithm that automatically generates playable content. The algorithm's focus on randomly generating unique dungeons with each playthrough ensures a high replay potential for gamers seeking endless exploration and adventure.
+I am currently working on the nature-themed domain and developing an algorithm that can automatically generate playable content. The algorithm's main focus is on creating randomly generated unique dungeons, which ensures a high replay potential for gamers who are looking for endless exploration and adventure during each playthrough.
 You can find more of my work on:
 YouTube: https://www.youtube.com/channel/UCMsGbL4Y4c8R8on-nft_ZiQ
+
+WORK IN PROGRESS!!! (Level Generation Preview)
+
+Smooth Tile Transitions.
+<p align="center">
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/AutomatedLvlGeneration.png" alt="flawlessTilemapTransitions]"/>
+</p>
+
+A 80x80 Tile containing a temple.
+<p align="center">
+  <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/80x80TileLevelGeneration.png" alt="Generated Temple Demo]"/>
+</p>
