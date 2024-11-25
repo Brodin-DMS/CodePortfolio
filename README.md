@@ -60,3 +60,6 @@ A 80x80 Tile containing a temple.  (OLD CONTET)
 
 U can find more of my OLD CONTENT ;) on my youtube, give it a quick peek (1:33 min)
 https://www.youtube.com/watch?v=1ZrcVTUi82s&list=PLWMWvdzzlJW2t5RNS214xigD8zfF_ZPed&index=4
+
+Thanks for your interest in the project!
+Brodin, an ambitious solo Developer.
