@@ -45,7 +45,7 @@ Heores Village.  (OLD CONTET)
 </p>
 
 
-This is a showcase of the UI functionality when assembling your party in the creation menu.  (1 year OLD IMAGES & Content)
+This is a showcase of the UI functionality when assembling your party in the creation menu.  (OLD CONTET)
 https://user-images.githubusercontent.com/16268642/197336140-c8be8501-1278-4739-8704-836f6d2c2aee.mp4
 
 Showcase of Level Generation.  (OLD CONTET)
@@ -53,7 +53,7 @@ Showcase of Level Generation.  (OLD CONTET)
   <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/AutomatedLvlGeneration.png" alt="flawlessTilemapTransitions]"/>
 </p>
 
-A 80x80 Tile containing a temple.  (1 year OLD IMAGES & Content)
+A 80x80 Tile containing a temple.  (OLD CONTET)
 <p align="center">
   <img src="https://github.com/Brodin-DMS/CodePortfolio/blob/master/Images/80x80TileLevelGeneration.png" alt="Generated Temple Demo]"/>
 </p>
