@@ -61,6 +61,7 @@ namespace RitualOfAnkaraz.Tilemap
         /// <param name="groupTile">is the data container attached to every existing Dungeon Tile, on a logical level.</param>
         /// <returns><c>IMapTile</c></returns>
         public abstract IMapTile CreateStartTile(GroupTile groupTile);
+        //NOTE Don't work with this following code(next two Methods,GetSingleTile,GetStartTile) directly, there is a small helper programm(CodeGenHelper) in the Solutions Folder that generates this code block for you.
         /// <summary>
         /// Helper funktion to Determin a 60x60 tile with valid tile connectors.
         /// </summary>
