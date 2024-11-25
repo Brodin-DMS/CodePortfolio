@@ -1,5 +1,6 @@
 # CodePortfolio
-This is a small showcase and a selected collection of scripts of the game Tavern Heroes. Tavern Heroes is a Turn based fantasy game, that builds on the d20 system. In the following image you see some gameplay footage during an combat encounter.
+This is a small showcase and a selected collection of scripts of the game Tavern Heroes. Tavern Heroes is a Turn based fantasy game, that builds on the d20 system.
+In the following image you see some gameplay footage during an combat encounter.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/16268642/204817125-be7f2f38-d086-4a28-b124-f8c9bf46b4b0.png" alt="Combat demo"/>
 </p>
