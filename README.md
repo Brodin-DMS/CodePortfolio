@@ -2,7 +2,9 @@
 Eldridar(former Tavern Heroes) is a large-scope game development project created as a side hustle, highlighting the challenges of building an ambitious game with limited time and resources. It emphasizes creative problem-solving while leveraging efficient testing solutions tailored to the game development context to ensure quality, with a focus on detecting bugs that could otherwise cause system failures. The project explores fundamental coding principles, balancing trade-offs such as performance, memory usage, complexity, scalability, and readability. By prioritizing high cohesion over tight coupling, it incorporates design patterns and best practices to create extendable and maintainable C# code. Eldridar represents a continuous journey of enhancing technical skills and solving complex software challenges within the creative domain of game development.
 
 Current Milestones: (swapping between programming, and Visual improvments to keep things fun and interesting)
-Note: I am currently working on a different project with a smaller scope. I'll continue working on this game after the laucnh of Drykendalith's Descent.
+
+I am currently working on a different project with a smaller scope. I'll continue working on this game after the laucnh of Drykendalith's Descent.
+
 0) **The project was just migrated to use unity's high definition renderpipine.**<br>
    Hopefully I can provide you with new Screenshots & Videos of gameplay footage!
 1) **Swapping out Character Models, Animations, and Images in favor of higher quality Assets.**<br>
