@@ -13,12 +13,12 @@ namespace RitualOfAnkaraz.Tilemap
     {
         #region Prefabs
         //2x1 Tiles, Tiles are predetermined
-        [SerializeField] private readonly List<GameObject> forrest2x1Tiles;
+        [SerializeField] private List<GameObject> forrest2x1Tiles;
         //1x2 Tiles, Tiles are predetermined
-        [SerializeField] private readonly List<GameObject> forrest1x2Tiles;
+        [SerializeField] private List<GameObject> forrest1x2Tiles;
         //2x2 Tiles, Tiles are predetermined
-        [SerializeField] private readonly List<GameObject> forrest2x2Tiles;
-        [SerializeField] private readonly List<GameObject> forrest3x3Tiles;
+        [SerializeField] private List<GameObject> forrest2x2Tiles;
+        [SerializeField] private List<GameObject> forrest3x3Tiles;
         #endregion
         #region Singleton
         //Singleton Pattern
